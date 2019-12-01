@@ -18,6 +18,12 @@
       InputField,
       OutputField,
       TweetButton
+    },
+    data() {
+      return {
+        inputText: '',
+        outputText: '',
+      }
     }
   }
 </script>
