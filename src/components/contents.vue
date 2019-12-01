@@ -3,18 +3,21 @@
     contentsだよ
     <InputField />
     <OutputField />
+    <TweetButton />
   </div>
 </template>
 
 <script>
   import InputField from './inputField.vue'
-  import OutputField from './outputField.vue'
+  import OutputField from './outputField'
+  import TweetButton from './tweetButton'
 
   export default {
     name: "contents",
     components: {
       InputField,
-      OutputField
+      OutputField,
+      TweetButton
     }
   }
 </script>
