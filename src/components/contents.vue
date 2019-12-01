@@ -96,6 +96,15 @@
     methods: {
       onInputAtChild(_) {
         this.inputText = _
+      },
+      replaceBlackCode(string) {
+        return string.replace(/./gsu, char => charTable[char] || char)
+      },
+      createReturnUTF(string) {
+        return `(!![]+[])[-~[]]+(!![]+[])[__]+(!![]+[])[+[]]+(!![]+[])[-~[-~[]]]+(!![]+[])[-~[]]+([]['']+[])[-~[]]+' \"'+'\\\\' +([]['']+[])[[]-[]] +'{' +${string}+ '}'+'\"'`
+      },
+      wrapper(string) {
+        return `[][_][_](${string})()`
       }
     },
   }
