@@ -1,6 +1,6 @@
 <template>
   <div>
-    inputだよ
+    おうtぷtだよ
     <div>props: {{outputText}}</div>
   </div>
 </template>

@@ -2,9 +2,10 @@
   <div>
     contentsだよ
     <InputField :inputText="inputText" @input="onInputAtChild" />
-    <OutputField :outputText="output" />
+    変数やめる?<input type="checkbox" v-model="isVariable" />
+    <div v-if="isVariable">{{replaceOutput}}</div>
+    <OutputField v-else :outputText="output" />
     <TweetButton />
-    <button @click="ConvertingInput"></button>
   </div>
 </template>
 
@@ -36,15 +37,15 @@
     c: "([...{}+{}])[(-~[]+[]+-~[]>>-~[])]",
     N: "(''/''+[])[-[]-[]]",
     "0": "([]-[]+[])",
-    "1": "(-~[])",
-    "2": "(-~[-~[]])",
-    "3": "(__)",
-    "4": "(-~[__])",
-    "5": "(-~[]+[]+-~[]>>-~[])",
-    "6": "(__+__)",
-    "7": "((-~[]+[]+-~[]>>-~[])+(-~[]<<-~[]))",
-    "8": "(-~[__]*-~-~[])",
-    "9": "(__*__)",
+    "1": "(-~[]+[])",
+    "2": "(-~[-~[]]+[])",
+    "3": "(__+[])",
+    "4": "(-~[__]+[])",
+    "5": "((-~[]+[]+-~[]>>-~[])+[])",
+    "6": "(__+__+[])",
+    "7": "((-~[]+[]+-~[]>>-~[])+(-~[]<<-~[])+[])",
+    "8": "(-~[__]*-~-~[]+[])",
+    "9": "(__*__+[])",
 
   }
   
@@ -59,16 +60,21 @@
       return {
         inputText: 'input',
         outputText: 'output',
+        isVariable: false
       }
     },
     computed: {
-      output(){
+      output() {
         return blackConstructor + this.outputText
+      },
+      replaceOutput() {
+        return this.outputText.split('__').join("-~-~-~[]").split('_').join('[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([][\'\']+[])[-~[]]+(([]==[])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([][\'\']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]')
       }
     },
     methods: {
       onInputAtChild(_) {
         this.inputText = _
+        this.ConvertingInput()
       },
       replaceBlackCode(string) {
         return string.replace(/./gsu, char => charTable[char] || char)
