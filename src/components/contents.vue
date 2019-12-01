@@ -1,7 +1,7 @@
 <template>
   <div>
     contentsだよ
-    <InputField :inputText="inputText" />
+    <InputField :inputText="inputText" @input="onInputAtChild" />
     <OutputField :outputText="outputText" />
     <TweetButton />
   </div>
@@ -24,7 +24,12 @@
         inputText: 'input',
         outputText: 'output',
       }
-    }
+    },
+    methods: {
+      onInputAtChild(_) {
+        this.inputText = _
+      }
+    },
   }
 </script>
 
