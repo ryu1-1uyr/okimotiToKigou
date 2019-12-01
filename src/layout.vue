@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <div>Header</div>
-    <div>main</div>
+    <Contents />
     <div>footer</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Contents from './components/contents.vue'
 
 export default {
   name: 'layout',
   components: {
-    HelloWorld
+    Contents
   }
 }
 </script>
