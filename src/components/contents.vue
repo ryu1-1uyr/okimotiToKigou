@@ -1,7 +1,7 @@
 <template>
   <div>
     contentsだよ
-    <InputField />
+    <InputField :inputText="inputText" />
     <OutputField />
     <TweetButton />
   </div>
@@ -17,7 +17,7 @@
     components: {
       InputField,
       OutputField,
-      TweetButton
+      TweetButtongit
     },
     data() {
       return {
