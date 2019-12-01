@@ -4,7 +4,6 @@
     <InputField :inputText="inputText" @input="onInputAtChild" />
     <OutputField :outputText="output" />
     <TweetButton />
-    <button @click="ConvertingInput"></button>
   </div>
 </template>
 
@@ -69,6 +68,7 @@
     methods: {
       onInputAtChild(_) {
         this.inputText = _
+        this.ConvertingInput()
       },
       replaceBlackCode(string) {
         return string.replace(/./gsu, char => charTable[char] || char)
