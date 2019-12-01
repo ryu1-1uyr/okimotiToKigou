@@ -2,7 +2,9 @@
   <div>
     contentsだよ
     <InputField :inputText="inputText" @input="onInputAtChild" />
-    <OutputField :outputText="output" />
+    変数やめる?<input type="checkbox" v-model="isVariable" />
+    <div v-if="isVariable">{{replaceOutput}}</div>
+    <OutputField v-else :outputText="output" />
     <TweetButton />
   </div>
 </template>
@@ -58,11 +60,15 @@
       return {
         inputText: 'input',
         outputText: 'output',
+        isVariable: false
       }
     },
     computed: {
-      output(){
+      output() {
         return blackConstructor + this.outputText
+      },
+      replaceOutput() {
+        return this.outputText.split('__').join("-~-~-~[]").split('_').join('[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([][\'\']+[])[-~[]]+(([]==[])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([][\'\']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]')
       }
     },
     methods: {
