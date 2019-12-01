@@ -8,11 +8,15 @@
 
 <script>
 import Contents from './components/contents.vue'
+import Input from './components/input.vue'
+import Output from './components/output.vue'
 
 export default {
   name: 'layout',
   components: {
-    Contents
+    Contents,
+    Input,
+    Output
   }
 }
 </script>
