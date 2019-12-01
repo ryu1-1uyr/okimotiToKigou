@@ -2,7 +2,7 @@
   <div>
     contentsだよ
     <InputField :inputText="inputText" />
-    <OutputField />
+    <OutputField :outputText="outputText" />
     <TweetButton />
   </div>
 </template>
@@ -17,12 +17,12 @@
     components: {
       InputField,
       OutputField,
-      TweetButtongit
+      TweetButton
     },
     data() {
       return {
-        inputText: '',
-        outputText: '',
+        inputText: 'input',
+        outputText: 'output',
       }
     }
   }

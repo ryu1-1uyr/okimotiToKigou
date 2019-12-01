@@ -1,12 +1,16 @@
 <template>
   <div>
     inputだよ
+    <div>props: {{outputText}}</div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "outputField"
+    name: "outputField",
+    props: {
+      outputText: String,
+    }
   }
 </script>
 
