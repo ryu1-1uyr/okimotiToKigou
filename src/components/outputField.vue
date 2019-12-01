@@ -1,7 +1,8 @@
 <template>
   <div>
     おうtぷtだよ
-    <div>props: {{outputText}}</div>
+    <div v-if="isVariable">{{replaceOutput}}</div>
+    <div v-else>props: {{outputText}}</div>
   </div>
 </template>
 
@@ -10,7 +11,13 @@
     name: "outputField",
     props: {
       outputText: String,
-    }
+      isVariable: Boolean
+    },
+    computed: {
+      replaceOutput() {
+        return this.outputText.split('__').join("-~-~-~[]").split('_').join('[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([][\'\']+[])[-~[]]+(([]==[])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([][\'\']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]')
+      }
+    },
   }
 </script>
 

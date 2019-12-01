@@ -3,8 +3,7 @@
     contentsだよ
     <InputField :inputText="inputText" @input="onInputAtChild" />
     変数やめる?<input type="checkbox" v-model="isVariable" />
-    <div v-if="isVariable">{{replaceOutput}}</div>
-    <OutputField v-else :outputText="output" />
+    <OutputField :outputText="output" :isVariable="isVariable" />
     <TweetButton />
   </div>
 </template>
@@ -67,9 +66,6 @@
       output() {
         return blackConstructor + this.outputText
       },
-      replaceOutput() {
-        return this.outputText.split('__').join("-~-~-~[]").split('_').join('[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([][\'\']+[])[-~[]]+(([]==[])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([][\'\']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]')
-      }
     },
     methods: {
       onInputAtChild(_) {
