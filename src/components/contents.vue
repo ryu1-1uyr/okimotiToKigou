@@ -62,8 +62,8 @@
     },
     data() {
       return {
-        inputText: 'input',
-        outputText: 'output',
+        inputText: '',
+        outputText: '',
         isVariable: false
       }
     },
