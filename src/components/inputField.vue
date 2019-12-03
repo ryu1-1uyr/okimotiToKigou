@@ -1,7 +1,6 @@
 <template>
   <div>
-    いんぷtだよ
-    <div>props: {{inputText}}</div>
+    <div>元の文字: {{inputText}}</div>
     <textarea v-model="tmp" v-on:keyup="onChangeInput" name="inputs" id="input" cols="100" rows="10"></textarea>
   </div>
 </template>

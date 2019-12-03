@@ -1,8 +1,8 @@
 <template>
   <div>
-    おうtぷtだよ
+    <p>生成されたやつ！</p>
     <div v-if="isVariable">{{replaceOutput}}</div>
-    <div v-else>props: {{outputText}}</div>
+    <div v-else>{{outputText}}</div>
   </div>
 </template>
 
