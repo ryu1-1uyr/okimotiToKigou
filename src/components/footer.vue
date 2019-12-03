@@ -11,7 +11,7 @@
 
 <style scoped>
   div{
-    color: #2c3e50;
+    color: #bfbbd0;
   }
   #footer{
     margin: 0;
@@ -20,7 +20,8 @@
     bottom: 0;
     left: 0;
     width: 100px;
-    /*background: #2c3e50;*/
+    background: #2c3e50;
+    border-radius: 0 30px 0 0;
   }
   a {
     color: #a0d0a7;
