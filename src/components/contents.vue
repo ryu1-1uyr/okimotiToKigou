@@ -1,10 +1,14 @@
 <template>
   <div>
-    contentsだよ
     <InputField :inputText="inputText" @input="onInputAtChild" />
-    変数やめる?<input type="checkbox" v-model="isVariable" />
-    <div v-if="isVariable">{{replaceOutput}}</div>
-    <OutputField v-else :outputText="output" />
+    <div>
+      <div>
+        <div v-if="isVariable">今は変数使ってないよ</div>
+        <div v-else>変数使ってるよ</div>
+      </div>
+      <input type="checkbox" v-model="isVariable" />
+    </div>
+    <OutputField :outputText="output" :isVariable="isVariable" />
     <TweetButton />
   </div>
 </template>
@@ -65,11 +69,12 @@
     },
     computed: {
       output() {
-        return blackConstructor + this.outputText
+        if(this.isVariable){
+          return this.outputText
+        }else{
+          return blackConstructor + this.outputText
+        }
       },
-      replaceOutput() {
-        return this.outputText.split('__').join("-~-~-~[]").split('_').join('[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([][\'\']+[])[-~[]]+(([]==[])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([][\'\']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]')
-      }
     },
     methods: {
       onInputAtChild(_) {
