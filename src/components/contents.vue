@@ -1,8 +1,13 @@
 <template>
   <div>
-    contentsだよ
     <InputField :inputText="inputText" @input="onInputAtChild" />
-    変数やめる?<input type="checkbox" v-model="isVariable" />
+    <div>
+      <div>
+        <div v-if="isVariable">今は変数使ってないよ</div>
+        <div v-else>変数使ってるよ</div>
+      </div>
+      <input type="checkbox" v-model="isVariable" />
+    </div>
     <OutputField :outputText="output" :isVariable="isVariable" />
     <TweetButton />
   </div>
@@ -64,7 +69,11 @@
     },
     computed: {
       output() {
-        return blackConstructor + this.outputText
+        if(this.isVariable){
+          return this.outputText
+        }else{
+          return blackConstructor + this.outputText
+        }
       },
     },
     methods: {
