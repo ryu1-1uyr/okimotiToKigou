@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <p>this is header</p>
+    <p>お気持ち to 記号！</p>
   </div>
 </template>
 
