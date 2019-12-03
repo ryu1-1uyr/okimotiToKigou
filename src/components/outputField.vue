@@ -6,7 +6,7 @@
       <div v-else>{{outputText}}</div>
     </div>
 
-    <TweetButton :tweetText="isReplace" />
+    <TweetButton :tweetText="isReplace" style="margin-top: 50px;" />
   </div>
 </template>
 

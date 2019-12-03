@@ -21,6 +21,26 @@
 
 <style scoped>
   .tweet{
-    background: #3bb4d0;
+    background: #0094a9;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #eef1f2;
+  }
+  a:hover{
+    animation: hoverTweet 1s 0s ease-out forwards;
+  }
+
+  @keyframes hoverTweet {
+    from{
+      background: #0094a9;
+    }
+    to {
+      background: #bfbbd0;
+      color: #0094a9;
+    }
   }
 </style>
