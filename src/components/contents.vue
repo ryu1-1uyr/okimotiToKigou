@@ -9,14 +9,12 @@
       <input type="checkbox" v-model="isVariable" />
     </div>
     <OutputField :outputText="output" :isVariable="isVariable" />
-    <TweetButton />
   </div>
 </template>
 
 <script>
   import InputField from './inputField.vue'
   import OutputField from './outputField'
-  import TweetButton from './tweetButton'
 
   const blackConstructor = "[__,_]=[-~-~[-~[]],[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([]['']+[])[-~[]]+(([]==[])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([]['']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]];"
 
@@ -58,7 +56,6 @@
     components: {
       InputField,
       OutputField,
-      TweetButton
     },
     data() {
       return {
