@@ -6,7 +6,6 @@
 
 <script>
   export default {
-    name: "header"
   }
 </script>
 
@@ -17,10 +16,10 @@
     /*padding: 0;*/
     /*margin: 0;*/
 
-    position: fixed; /* ヘッダーを固定する */
-    top: 0; /* 上部から配置の基準位置を決める */
-    left: 0; /* 左から配置の基準位置を決める */
-    width: 100%; /* ヘッダーの横幅を指定する */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     /*height: 30px;*/
   }
 </style>
