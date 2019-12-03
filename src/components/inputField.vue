@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>元の文字: {{inputText}}</div>
-    <textarea v-model="tmp" v-on:keyup="onChangeInput" name="inputs" id="input" cols="100" rows="10"></textarea>
+    <textarea v-model="tmp" v-on:keyup="onChangeInput" name="inputs" id="input" cols="100" rows="10" placeholder="お気持ちを入力してね！"></textarea>
   </div>
 </template>
 
@@ -26,5 +26,10 @@
 </script>
 
 <style scoped>
-
+  #input {
+    max-width: 300px;
+    border: #2c3e50 solid;
+    border-radius: 20px;
+    padding: 5px;
+  }
 </style>
