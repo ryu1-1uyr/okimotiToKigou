@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>Header</div>
+    <Header />
     <Contents/>
     <div>footer</div>
   </div>
@@ -8,11 +8,14 @@
 
 <script>
   import Contents from './components/contents.vue'
+  import Header from './components/header.vue'
+
 
   export default {
     name: 'layout',
     components: {
       Contents,
+      Header,
     }
   }
 </script>
