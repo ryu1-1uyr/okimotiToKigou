@@ -12,7 +12,7 @@
     },
     computed:{
       twitter(){
-        console.log(encodeURI(this.tweetText).split('+').join("%2B"))
+        // console.log(encodeURI(this.tweetText).split('+').join("%2B"))
         return encodeURI(this.tweetText).split('+').join("%2B")
       }
     }
