@@ -5,12 +5,19 @@
       <div v-if="isVariable">{{replaceOutput}}</div>
       <div v-else>{{outputText}}</div>
     </div>
+
+    <TweetButton :tweetText="isReplace" style="margin-top: 50px;" />
   </div>
 </template>
 
 <script>
+  import TweetButton from './tweetButton'
+
   export default {
     name: "outputField",
+    components:{
+      TweetButton
+    },
     props: {
       outputText: String,
       isVariable: Boolean,
@@ -22,7 +29,14 @@
     },
     computed: {
       replaceOutput() {
-        return this.outputText.split('__').join("-~-~-~[]").split('_').join('[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([][\'\']+[])[-~[]]+(([]==[])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([][\'\']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]')
+        return this.outputText.split('__').join("-~-~-~[]").split('_').join('[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([][\'\']+[])[-~[]]+((![])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([][\'\']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]')
+      },
+      isReplace() {
+        if(this.isVariable) {
+          return this.replaceOutput
+        }else {
+          return this.outputText
+        }
       }
     },
     methods: {

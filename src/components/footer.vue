@@ -19,8 +19,9 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100px;
     background: #2c3e50;
+    border-radius: 0 30px 0 0;
   }
   a {
     color: #a0d0a7;
